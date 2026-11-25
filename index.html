@@ -126,8 +126,9 @@ execute()
 function execute() {
   number1 = Number(document.getElementById("num1input").value) 
   number2 = Number(document.getElementById("num2input").value) 
-  if (operation != null && number1 != null && number2 != null && equations < 5) {
+  if (operation != null && number1 != null && number2 != null && equations <= 5) {
     equations += 1
+    console.log(equations)
     if (operation == "addition") {
         total = number1 + number2
     } else {
