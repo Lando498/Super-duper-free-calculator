@@ -1,27 +1,105 @@
 <!DOCTYPE html>
 <style>
+  body {
+      font-family: i-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
 
+  }
+.opbut {
+  height: 4rem;
+  width: 4rem;
+  font-size: 2rem;
+  border-radius: 8px;
+  background-color: rgb(255, 177, 33);
+  font-family: i-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+}
+#totaldis {
+    font-family: i-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+    display: flex;
+    justify-self: center;
+}
+#calc {
+  display: block;;
+  height: 15rem;
+  width: 17.5rem;
+  background-color: gray;
+}
+#container {
+  display: flex;
+  justify-content: center;
+}
+#num1input {
+  width: 50%;
+}
+#num2input {
+width: 50%;
+}
+#operations {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+#paydiv {
+  border-radius: 15px;
+  height: 15rem;
+  width: 20rem;
+  background-color: rgb(59, 59, 59);
+  color: rgb(255, 255, 255);
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#buy {
+text-decoration: none;
+  width: 6rem;
+  height: 3rem;
+  border-radius: 10px;
+  background-color: rgb(89, 240, 89);
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-family: i-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+
+}
 </style>
 <head>
 
 </head>
 <body>
-<input type="text" id="num1input" placeholder="number 1">
+  <div id="calc">
+    <h1 id="totaldis" >0</h1>
+<div id="container">
+  <input type="text" id="num1input" placeholder="number 1">
 <input type="text" id="num2input" placeholder="number 2">
-<button id="addition">+</button>
-<button id="subtraction">-</button>
-<button id="multiplication">x</button>
-<button id="division">/</button>
-<button id="exe">=</button>
+</div>
+  <div id="operations">
+<button id="addition" class="opbut">+</button>
+<button id="subtraction" class="opbut">-</button>
+<button id="multiplication" class="opbut">x</button>
+<button id="division" class="opbut">/</button>
+  </div>
+  </div>
+  <div id="paydiv">
+    <h2 id="textbutpay">You have hit your limit</h2>
+    <p id="textbutpay">You have done 5 equations in this session</p>
+    <h3 id="textbutpay">continue to calculate for only £99.99</h3>
+    <a href="paywall.html" id="buy">£99.99</a>
+  </div>
 </body>
 <footer>
 
 </footer>
 <script>
+let equations = 0
 let operation = null
 let number1 = Number(document.getElementById("num1input").value) 
 let number2 = Number(document.getElementById("num2input").value) 
 let total = 0
+let paydiv = document.getElementById("paydiv")
+paydiv.style.display = "None"
 function changeoperation(val) {
 if (val == "addition") {
   operation = "addition"
@@ -42,12 +120,14 @@ if (val == "addition") {
     }
   }
 }
+execute()
 }
 
 function execute() {
   number1 = Number(document.getElementById("num1input").value) 
   number2 = Number(document.getElementById("num2input").value) 
-  if (operation != null && number1 != null && number2 != null) {
+  if (operation != null && number1 != null && number2 != null && equations < 5) {
+    equations += 1
     if (operation == "addition") {
         total = number1 + number2
     } else {
@@ -63,8 +143,10 @@ function execute() {
         }
       }
     }
-  }
+  } else {      paydiv.style.display = "Flex"
+}
   console.log(total)
+  document.getElementById("totaldis").innerText = total
 }
 
 document.getElementById("addition").addEventListener("click", ()=>
@@ -78,8 +160,5 @@ document.getElementById("multiplication").addEventListener("click", ()=>
 );
 document.getElementById("division").addEventListener("click", ()=>
   changeoperation("division")
-);
-document.getElementById("exe").addEventListener("click", ()=> 
-execute()
 );
 </script>
