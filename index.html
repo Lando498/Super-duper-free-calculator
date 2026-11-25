@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<style>
+
+</style>
+<head>
+
+</head>
+<body>
+<input type="text" id="num1input" placeholder="number 1">
+<input type="text" id="num2input" placeholder="number 2">
+<button id="addition">+</button>
+<button id="subtraction">-</button>
+<button id="multiplication">x</button>
+<button id="division">/</button>
+<button id="exe">=</button>
+</body>
+<footer>
+
+</footer>
+<script>
+let operation = null
+let number1 = Number(document.getElementById("num1input").value) 
+let number2 = Number(document.getElementById("num2input").value) 
+let total = 0
+function changeoperation(val) {
+if (val == "addition") {
+  operation = "addition"
+  console.log(operation)
+} else {
+  if (val == "subtraction") {
+  operation = "subtraction"
+  console.log(operation)
+  } else {
+    if (val == "multiplication") {
+  operation = "multiplication"
+  console.log(operation)
+    } else {
+      if (val == "division") {
+  operation = "division"
+  console.log(operation)
+      }
+    }
+  }
+}
+}
+
+function execute() {
+  number1 = Number(document.getElementById("num1input").value) 
+  number2 = Number(document.getElementById("num2input").value) 
+  if (operation != null && number1 != null && number2 != null) {
+    if (operation == "addition") {
+        total = number1 + number2
+    } else {
+      if (operation == "subtraction") {
+        total = number1 - number2
+      } else {
+        if (operation == "multiplication") {
+        total = number1 * number2
+        } else {
+          if (operation == "division") {
+        total = number1 / number2
+          }
+        }
+      }
+    }
+  }
+  console.log(total)
+}
+
+document.getElementById("addition").addEventListener("click", ()=>
+  changeoperation("addition")
+);
+document.getElementById("subtraction").addEventListener("click", ()=>
+  changeoperation("subtraction")
+);
+document.getElementById("multiplication").addEventListener("click", ()=>
+  changeoperation("multiplication")
+);
+document.getElementById("division").addEventListener("click", ()=>
+  changeoperation("division")
+);
+document.getElementById("exe").addEventListener("click", ()=> 
+execute()
+);
+</script>
