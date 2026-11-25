@@ -1,90 +1,147 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <style>
   body {
-      font-family: i-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+    font-family: i-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+  }
+
+  .opbut {
+    height: 4rem;
+    width: 4rem;
+    font-size: 2rem;
+    vertical-align: middle;
+    border-radius: 8px;
+    background-color: rgb(255, 177, 33);
+    font-family: i-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+  }
+
+  .clearbut {
+    height: 4rem;
+    width: 4rem;
+    vertical-align: middle;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    background-color: rgb(255, 177, 33);
+    font-family: i-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
 
   }
-.opbut {
-  height: 4rem;
-  width: 4rem;
-  font-size: 2rem;
-  border-radius: 8px;
-  background-color: rgb(255, 177, 33);
-  font-family: i-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
-}
-#totaldis {
-    font-family: i-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
-    display: flex;
-    justify-self: center;
-}
-#calc {
-  display: block;;
-  height: 15rem;
-  width: 17.5rem;
-  background-color: gray;
-}
-#container {
-  display: flex;
-  justify-content: center;
-}
-#num1input {
-  width: 50%;
-}
-#num2input {
-width: 50%;
-}
-#operations {
-  display: flex;
-  padding: 10px;
-  justify-content: center;
-}
-#paydiv {
-  border-radius: 15px;
-  height: 15rem;
-  width: 20rem;
-  background-color: rgb(59, 59, 59);
-  color: rgb(255, 255, 255);
-  display: flex;
-  padding: 10px;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-#buy {
-text-decoration: none;
-  width: 6rem;
-  height: 3rem;
-  border-radius: 10px;
-  background-color: rgb(89, 240, 89);
-  font-size: large;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  font-family: i-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
 
-}
+  #totaldis {
+    font-family: i-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+    width: 100%;
+    text-align: center;
+
+  }
+
+  #calc {
+    display: block;
+    text-align: center;
+    height: 28rem;
+    width: 17.5rem;
+    background-color: gray;
+    border-radius: 15px;
+  }
+
+  #container {
+    display: flex;
+    justify-content: center;
+  }
+
+  #num1input {
+    width: 50%;
+  }
+
+  #num2input {
+    width: 50%;
+  }
+
+  #operations {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  #paydiv {
+    top: 15px;
+    left: 5px;
+    position: absolute;
+    border-radius: 15px;
+    height: 15rem;
+    width: 20rem;
+    background-color: rgb(59, 59, 59);
+    color: rgb(255, 255, 255);
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #buy {
+    text-decoration: none;
+    width: 6rem;
+    height: 3rem;
+    border-radius: 10px;
+    background-color: rgb(89, 240, 89);
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-family: i-rounded, 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Calibri, source-sans-pro, sans-serif;
+
+  }
+
+  #numbers {
+    width: 90%;
+
+  }
+
+  #container2electricboogaloo {
+    display: flex;
+    justify-content: center;
+  }
 </style>
+
 <head>
 
 </head>
+
 <body>
   <div id="calc">
-    <h1 id="totaldis" >0</h1>
-<div id="container">
-  <input type="text" id="num1input" placeholder="number 1">
-<input type="text" id="num2input" placeholder="number 2">
-</div>
-  <div id="operations">
-<button id="addition" class="opbut">+</button>
-<button id="subtraction" class="opbut">-</button>
-<button id="multiplication" class="opbut">x</button>
-<button id="division" class="opbut">/</button>
-  </div>
+    <h1 id="totaldis">0</h1>
+    <div id="container">
+      <input type="text" id="num1input" placeholder="number 1">
+      <input type="text" id="num2input" placeholder="number 2">
+    </div>
+    <div id="operations">
+      <button id="addition" class="opbut">+</button>
+      <button id="subtraction" class="opbut">-</button>
+      <button id="multiplication" class="opbut">x</button>
+      <button id="division" class="opbut">/</button>
+    </div>
+    <div id="container2electricboogaloo">
+      <div id="numbers">
+        <button id="1" class="opbut">1</button>
+        <button id="2" class="opbut">2</button>
+        <button id="3" class="opbut">3</button>
+        <button id="4" class="opbut">4</button>
+        <button id="5" class="opbut">5</button>
+        <button id="6" class="opbut">6</button>
+        <button id="7" class="opbut">7</button>
+        <button id="8" class="opbut">8</button>
+        <button id="9" class="opbut">9</button>
+        <button id="clear" class="clearbut">Clear</button>
+        <button id="0" class="opbut">0</button>
+        <button id="exe" class="opbut">=</button>
+      </div>
+    </div>
+
+
   </div>
   <div id="paydiv">
     <h2 id="textbutpay">You have hit your limit</h2>
-    <p id="textbutpay">You have done 5 equations in this session</p>
+    <p id="textbutpay">You have done 20 equations in this session</p>
     <h3 id="textbutpay">continue to calculate for only £99.99</h3>
     <a href="paywall.html" id="buy">£99.99</a>
   </div>
@@ -93,72 +150,146 @@ text-decoration: none;
 
 </footer>
 <script>
-let equations = 0
-let operation = null
-let number1 = Number(document.getElementById("num1input").value) 
-let number2 = Number(document.getElementById("num2input").value) 
-let total = 0
-let paydiv = document.getElementById("paydiv")
-paydiv.style.display = "None"
-function changeoperation(val) {
-if (val == "addition") {
-  operation = "addition"
-  console.log(operation)
-} else {
-  if (val == "subtraction") {
-  operation = "subtraction"
-  console.log(operation)
-  } else {
-    if (val == "multiplication") {
-  operation = "multiplication"
-  console.log(operation)
-    } else {
-      if (val == "division") {
-  operation = "division"
-  console.log(operation)
-      }
-    }
-  }
-}
-execute()
-}
+  let whichone = 0
+  let equations = 2
+  let operation = null
+  let number1 = Number(document.getElementById("num1input").value)
+  let number2 = Number(document.getElementById("num2input").value)
+  let total = 0
+  let paydiv = document.getElementById("paydiv")
+  paydiv.style.display = "None"
 
-function execute() {
-  number1 = Number(document.getElementById("num1input").value) 
-  number2 = Number(document.getElementById("num2input").value) 
-  if (operation != null && number1 != null && number2 != null && equations < 5) {
-    equations += 1
-    if (operation == "addition") {
-        total = number1 + number2
+  function flipwhichone() {
+    if (whichone == 1) {
+      whichone = 0
     } else {
-      if (operation == "subtraction") {
-        total = number1 - number2
+      whichone = 1
+    }
+    console.log("whichone = " && whichone)
+  }
+
+  function changeoperation(val) {
+    if (val == "addition") {
+      operation = "addition";
+      console.log(operation);
+      flipwhichone()
+    } else {
+      if (val == "subtraction") {
+        operation = "subtraction";
+        console.log(operation);
+        flipwhichone()
       } else {
-        if (operation == "multiplication") {
-        total = number1 * number2
+        if (val == "multiplication") {
+          operation = "multiplication";
+          console.log(operation);
+          flipwhichone()
         } else {
-          if (operation == "division") {
-        total = number1 / number2
+          if (val == "division") {
+            operation = "division";
+            console.log(operation);
+            flipwhichone()
           }
         }
       }
     }
-  } else {      paydiv.style.display = "Flex"
-}
-  console.log(total)
-  document.getElementById("totaldis").innerText = total
-}
+  }
 
-document.getElementById("addition").addEventListener("click", ()=>
-  changeoperation("addition")
-);
-document.getElementById("subtraction").addEventListener("click", ()=>
-  changeoperation("subtraction")
-);
-document.getElementById("multiplication").addEventListener("click", ()=>
-  changeoperation("multiplication")
-);
-document.getElementById("division").addEventListener("click", ()=>
-  changeoperation("division")
-);
+
+  function execute() {
+    number1 = Number(document.getElementById("num1input").value)
+    number2 = Number(document.getElementById("num2input").value)
+    if (operation != "" && number1 != "" && number2 != "" && equations <= 20) {
+      equations += 1
+      console.log(equations)
+      if (operation == "addition") {
+        total = number1 + number2
+      } else {
+        if (operation == "subtraction") {
+          total = number1 - number2
+        } else {
+          if (operation == "multiplication") {
+            total = number1 * number2
+          } else {
+            if (operation == "division") {
+              total = number1 / number2
+            }
+          }
+        }
+      }
+    } else {
+      if (equations >= 20) {
+        paydiv.style.display = "Flex"
+
+      }
+    }
+    console.log(total)
+    document.getElementById("totaldis").innerText = total
+  }
+
+  function addnumber(num) {
+    number1 = document.getElementById("num1input").value
+    number2 = document.getElementById("num2input").value
+    if (whichone == 0) {
+      number1 += num
+      document.getElementById("num1input").value = number1
+    } else {
+      number2 += num
+      document.getElementById("num2input").value = number2
+    }
+  }
+
+  function clear() {
+    document.getElementById("num2input").value = ""
+    document.getElementById("num1input").value = ""
+    whichone = 0
+  }
+
+  document.getElementById("addition").addEventListener("click", () =>
+    changeoperation("addition")
+  );
+  document.getElementById("subtraction").addEventListener("click", () =>
+    changeoperation("subtraction")
+  );
+  document.getElementById("multiplication").addEventListener("click", () =>
+    changeoperation("multiplication")
+  );
+  document.getElementById("division").addEventListener("click", () =>
+    changeoperation("division")
+  );
+  document.getElementById("1").addEventListener("click", () =>
+    addnumber(1)
+  );
+  document.getElementById("2").addEventListener("click", () =>
+    addnumber(2)
+  );
+  document.getElementById("3").addEventListener("click", () =>
+    addnumber(3)
+  );
+  document.getElementById("4").addEventListener("click", () =>
+    addnumber(4)
+  );
+  document.getElementById("5").addEventListener("click", () =>
+    addnumber(5)
+  );
+  document.getElementById("6").addEventListener("click", () =>
+    addnumber(6)
+  );
+  document.getElementById("7").addEventListener("click", () =>
+    addnumber(7)
+  );
+  document.getElementById("8").addEventListener("click", () =>
+    addnumber(8)
+  );
+  document.getElementById("9").addEventListener("click", () =>
+    addnumber(9)
+  );
+  document.getElementById("0").addEventListener("click", () =>
+    addnumber(0)
+  );
+  document.getElementById("exe").addEventListener("click", () =>
+    execute()
+  );
+  document.getElementById("clear").addEventListener("click", () =>
+    clear()
+  );
 </script>
